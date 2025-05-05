@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social News App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <h1>📰 Social News App</h1>
+    <div id="menu" class="menu">
+      <h2>Start Menu</h2>
+      <button onclick="handleMenuChoice('show')">1: Show Links</button>
+      <button onclick="handleMenuChoice('add')">2: Add New Link</button>
+      <button onclick="handleMenuChoice('remove')">3: Remove a Link</button>
+      <button onclick="handleMenuChoice('quit')">4: Quit</button>
+    </div>
+
+    <div id="formContainer" class="hidden">
+      <h2>Add a New Link</h2>
+      <input type="text" id="titleInput" placeholder="Link Title" />
+      <input type="text" id="urlInput" placeholder="Link URL" />
+      <input type="text" id="authorInput" placeholder="Author" />
+      <button onclick="submitNewLink()">Submit</button>
+      <button class="cancel" onclick="returnToMenu()">Cancel</button>
+    </div>
+
+    <div id="linkList" class="hidden">
+      <h2>Links</h2>
+      <div id="linksDisplay"></div>
+      <button onclick="returnToMenu()">Back to Menu</button>
+    </div>
+
+    <div id="removeLinkContainer" class="hidden">
+      <h2>Remove a Link</h2>
+      <p>Select a link to remove:</p>
+      <div id="removeLinksDisplay"></div>
+      <button class="cancel" onclick="returnToMenu()">Cancel</button>
+    </div>
+
+    <div id="exitMessage" class="hidden">
+      <h2>👋 Goodbye!</h2>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
